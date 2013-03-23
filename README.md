@@ -11,25 +11,24 @@ Documentation
 
 Choose elements.
 
-####Example
+#####Example
 ```javascript
 $('div');
 ```
-
 
 
 ###hasClass
 
 Check if element has any class.
 
-####Example
+#####Example
 ```javascript
 var flag = $('div').hasClass();
 ```
 
 Check if element has class with name.
 
-####Example
+#####Example
 ```javascript
 var flag = $('div').hasClass('name');
 ```
@@ -39,7 +38,7 @@ var flag = $('div').hasClass('name');
 
 Append class to all elements.
 
-####Example
+#####Example
 ```javascript
 $('div').addClass('name');
 ```
@@ -49,7 +48,7 @@ $('div').addClass('name');
 
 Remove class from all elements.
 
-####Example
+#####Example
 ```javascript
 $('div').removeClass('name');
 ```
@@ -59,7 +58,7 @@ $('div').removeClass('name');
 
 Add class if it is not and remove if it is.
 
-####Example
+#####Example
 ```javascript
 $('div').toggleClass('name');
 ```
@@ -69,14 +68,14 @@ $('div').toggleClass('name');
 
 Append HTML.
 
-####Example
+#####Example
 ```javascript
 $('div').HTML('some');
 ```
 
 Get HTML.
 
-####Example
+#####Example
 ```javascript
 var value = $('div').HTML();
 ```
@@ -86,14 +85,14 @@ var value = $('div').HTML();
 
 Append text.
 
-####Example
+#####Example
 ```javascript
 $('div').text('some');
 ```
 
 Get text.
 
-####Example
+#####Example
 ```javascript
 var value = $('div').text();
 ```
@@ -103,7 +102,7 @@ var value = $('div').text();
 
 Append attribute.
 
-####Example
+#####Example
 ```javascript
 $('div').addAttr('name','value');
 ```
@@ -113,7 +112,7 @@ $('div').addAttr('name','value');
 
 Remove attribute.
 
-####Example
+#####Example
 ```javascript
 $('div').removeAttr('name');
 ```
