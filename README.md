@@ -17,6 +17,7 @@ $('div');
 ```
 
 
+
 ###hasClass
 
 Check if element has any class.
