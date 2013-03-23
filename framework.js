@@ -1,61 +1,70 @@
 function $(val) {
-  return document.querySelector(val);
-}
-
-function $All(val) {
 	return document.querySelectorAll(val);
 }
 
-function addClass(el,cls) {
-	$(el).classList.add(cls);
-}
+var Node = NodeList.__proto__ || NodeList.prototype;
 
-function removeClass(el,cls) {
-	$(el).classList.remove(cls);
-}
-
-function toggleClass(el,cls){
-	$(el).classList.toggle(cls);
-}
-
-function HTML(el,value){
-	if (value !== undefined) {
-		$(el).innerHTML = value;	
-	}
-	else 
-		return $(el).innerHTML;
-}
-
-function text(el,value){
-	if (value !== undefined) {
-		$(el).innerText = value;	
-	}
-	else 
-		return $(el).innerText;
-}
-
-function addAttr (el,name,value){
-	$(el).setAttribute(name,value);
-}
-
-function removeAttr(el,name){
-	$(el).removeAttribute(name);
-}
-
-function getAttr(el,name){
-	return $(el).getAttribute(name);
-}
-
-function hasClass(el,cls){
-	if (cls === undefined) {
-		if($(el).className !== "") return true;
+Node.hasClass = function (value){
+	if (value === undefined) {
+		if(this[0].className !== "") return true;
 	}
 	else
 	{
-		var classes = $(el).className.split(" ");
+		var classes = this[0].className.split(" ");
 		for (var i = 0; i < classes.length; i++) {
-			if( classes[i] === cls ) return true;
+			if( classes[i] === value ) return true;
 		}
 	}
 	return false;
+}
+
+Node.addClass = function (value) {
+	for (var i = 0; i < this.length; i++) {
+		this[i].classList.add(value);
+	};
+}
+
+Node.removeClass = function(value) {
+	for (var i = 0; i < this.length; i++) {
+		this[i].classList.remove(value);
+	};
+}
+
+Node.toggleClass = function(value){
+	for (var i = 0; i < this.length; i++) {
+		this[i].classList.toggle(value);
+	};
+	
+}
+Node.HTML = function(value){
+	if (value !== undefined) {
+		this[0].innerHTML = value;	
+	}
+	else 
+		return this[0].innerHTML;
+}
+
+Node.text = function(value){
+	if (value !== undefined) {
+		this.innerText = value;	
+	}
+	else 
+		return this.innerText;
+}
+
+Node.addAttr = function(name,value){
+	for (var i = 0; i < this.length; i++) {
+		this[0].setAttribute(name,value);
+	};
+	
+}
+
+Node.removeAttr = function(name){
+	for (var i = 0; i < this.length; i++) {
+		this[i].removeAttribute(name);
+	};
+}
+
+Node.getAttr = function(name){
+	return this[0].getAttribute(name);
 }
